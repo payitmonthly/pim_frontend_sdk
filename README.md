@@ -30,13 +30,10 @@ All options are set as `data-*` attributes on the `<script>` tag.
 
 | Attribute | Type | Default | Description |
 |---|---|---|---|
-| `data-pim-price` | number | `2985` | The product price in pence/pounds (£). Drives the payment calculator. |
+| `data-pim-price` | number | `2985` | The product price in £. Drives the payment calculator. |
 | `data-pim-max-instalments` | number | `24` | Maximum number of monthly instalments offered. |
-| `data-pim-color` | string | `#875fc8` | Primary brand colour (hex). Applied to the banner, modal panel, and slider. |
-| `data-pim-min-price` | number | `500` | Minimum price boundary for internal validation. |
-| `data-pim-max-price` | number | `5000` | Maximum price boundary for internal validation. |
 
-### Example — custom colour and instalment cap
+### Example — custom instalment cap
 
 ```html
 <div data-acpim-widget></div>
@@ -44,8 +41,7 @@ All options are set as `data-*` attributes on the `<script>` tag.
 <script async type="module"
   src="https://payitmonthly.github.io/pim_frontend_sdk/pim-widget.js"
   data-pim-price="799"
-  data-pim-max-instalments="6"
-  data-pim-color="#2563eb">
+  data-pim-max-instalments="6">
 </script>
 ```
 

@@ -77,21 +77,6 @@
             color: #617481;
             margin: 0 0 12px;
         }
-        .code-block {
-            background: #1e1e2e;
-            color: #cdd6f4;
-            border-radius: 10px;
-            padding: 18px 20px;
-            font-family: 'Courier New', monospace;
-            font-size: 13px;
-            line-height: 1.7;
-            overflow-x: auto;
-            margin-top: 12px;
-        }
-        .code-block .attr  { color: #89b4fa; }
-        .code-block .val   { color: #a6e3a1; }
-        .code-block .tag   { color: #f38ba8; }
-        .code-block .cmt   { color: #6c7086; }
     </style>
 </head>
 <body>
@@ -133,44 +118,11 @@
         Script tag configuration:
           data-pim-price            — product price in £ (required)
           data-pim-max-instalments  — maximum months offered (optional, default 24)
-          data-pim-color            — brand hex colour     (optional, default #875fc8)
     -->
     <script async type="module"
         src="https://payitmonthly.github.io/pim_frontend_sdk/pim-widget.js"
         data-pim-price="2985"
-        data-pim-max-instalments="24"
-        data-pim-color="#875fc8">
-    </script>
-
-
-    <!-- ═══════════════════════════════════════════════════
-         EXAMPLE 2 — Custom brand colour
-         ════════════════════════════════════════════════ -->
-    <div class="section">
-        <h3>Example 2 — Custom brand colour</h3>
-        <p style="color:#506978; font-size:14px; margin:0 0 16px;">
-            Pass <code>data-pim-color</code> to match your store's brand colours.
-        </p>
-
-        <div data-acpim-widget></div>
-
-        <div class="code-block">
-<span class="tag">&lt;div</span> <span class="attr">data-acpim-widget</span><span class="tag">&gt;&lt;/div&gt;</span>
-
-<span class="tag">&lt;script</span> <span class="attr">async type</span>=<span class="val">"module"</span>
-  <span class="attr">src</span>=<span class="val">"https://payitmonthly.github.io/pim_frontend_sdk/pim-widget.js"</span>
-  <span class="attr">data-pim-price</span>=<span class="val">"1200"</span>
-  <span class="attr">data-pim-max-instalments</span>=<span class="val">"12"</span>
-  <span class="attr">data-pim-color</span>=<span class="val">"#e05c2a"</span><span class="tag">&gt;
-&lt;/script&gt;</span>
-        </div>
-    </div>
-
-    <script async type="module"
-        src="https://payitmonthly.github.io/pim_frontend_sdk/pim-widget.js"
-        data-pim-price="1200"
-        data-pim-max-instalments="12"
-        data-pim-color="#e05c2a">
+        data-pim-max-instalments="24">
     </script>
 
 </body>

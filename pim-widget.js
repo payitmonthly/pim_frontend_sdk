@@ -11,8 +11,6 @@
     price: parseFloat(script?.dataset?.pimPrice || 2985),
     maxInstalments: parseInt(script?.dataset?.pimMaxInstalments || 24),
     color: script?.dataset?.pimColor || "#875fc8",
-    minPrice: parseFloat(script?.dataset?.pimMinPrice || 500),
-    maxPrice: parseFloat(script?.dataset?.pimMaxPrice || 5000),
   };
 
   console.log("Widget Config Loaded:", config); // This will show in your Edge Console (F12)
