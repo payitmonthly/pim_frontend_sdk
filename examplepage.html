@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PayItMonthly Widget — Example Page</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            padding: 40px 24px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #f5f6fa;
+            color: #1a1a2e;
+        }
+        .page-header {
+            max-width: 680px;
+            margin: 0 auto 48px;
+        }
+        .page-header h1 { font-size: 28px; margin: 0 0 8px; }
+        .page-header p  { margin: 0; color: #506978; line-height: 1.6; }
+
+        /* ── Product card ── */
+        .product-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 28px;
+            max-width: 680px;
+            margin: 0 auto 48px;
+            box-shadow: 0 2px 12px rgba(0,0,0,.06);
+        }
+        .product-card img.product-image {
+            width: 100%;
+            aspect-ratio: 16/7;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            background: #e8eaf6;
+        }
+        .product-card h2 { margin: 0 0 6px; font-size: 22px; }
+        .product-card .price {
+            font-size: 26px;
+            font-weight: 700;
+            margin: 0 0 20px;
+            color: #101111;
+        }
+        .product-card .price span {
+            font-size: 14px;
+            font-weight: 400;
+            color: #617481;
+        }
+        .buy-button {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: #875fc8;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 16px;
+        }
+        .buy-button:hover { opacity: 0.9; }
+
+        /* ── Section labels ── */
+        .section {
+            max-width: 680px;
+            margin: 0 auto 48px;
+        }
+        .section h3 {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #617481;
+            margin: 0 0 12px;
+        }
+        .code-block {
+            background: #1e1e2e;
+            color: #cdd6f4;
+            border-radius: 10px;
+            padding: 18px 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.7;
+            overflow-x: auto;
+            margin-top: 12px;
+        }
+        .code-block .attr  { color: #89b4fa; }
+        .code-block .val   { color: #a6e3a1; }
+        .code-block .tag   { color: #f38ba8; }
+        .code-block .cmt   { color: #6c7086; }
+    </style>
+</head>
+<body>
+
+    <div class="page-header">
+        <h1>PayItMonthly Widget — Example</h1>
+        <p>
+            This page demonstrates how to embed the PayItMonthly financing widget on a product page.
+            Click the banner below to open the interactive payment calculator.
+        </p>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════
+         EXAMPLE 1 — Standard product page embed
+         ════════════════════════════════════════════════ -->
+    <div class="section">
+        <h3>Example 1 — Standard product page</h3>
+    </div>
+
+    <div class="product-card">
+        <!-- Placeholder image — replace with your product image -->
+        <img class="product-image"
+             src="https://placehold.co/680x280/e8eaf6/875fc8?text=Product+Image"
+             alt="Example product" />
+
+        <h2>Premium Standing Desk</h2>
+        <p class="price">£2,985.00 <span>inc. VAT &amp; delivery</span></p>
+
+        <!--
+            Place [data-acpim-widget] exactly where you want the banner to appear.
+            The widget replaces this element when the script loads.
+        -->
+        <div data-acpim-widget></div>
+
+        <button class="buy-button">Add to basket</button>
+    </div>
+
+    <!--
+        Script tag configuration:
+          data-pim-price            — product price in £ (required)
+          data-pim-max-instalments  — maximum months offered (optional, default 24)
+          data-pim-color            — brand hex colour     (optional, default #875fc8)
+    -->
+    <script async type="module"
+        src="https://payitmonthly.github.io/pim_frontend_sdk/pim-widget.js"
+        data-pim-price="2985"
+        data-pim-max-instalments="24"
+        data-pim-color="#875fc8">
+    </script>
+
+
+    <!-- ═══════════════════════════════════════════════════
+         EXAMPLE 2 — Custom brand colour
+         ════════════════════════════════════════════════ -->
+    <div class="section">
+        <h3>Example 2 — Custom brand colour</h3>
+        <p style="color:#506978; font-size:14px; margin:0 0 16px;">
+            Pass <code>data-pim-color</code> to match your store's brand colours.
+        </p>
+
+        <div data-acpim-widget></div>
+
+        <div class="code-block">
+<span class="tag">&lt;div</span> <span class="attr">data-acpim-widget</span><span class="tag">&gt;&lt;/div&gt;</span>
+
+<span class="tag">&lt;script</span> <span class="attr">async type</span>=<span class="val">"module"</span>
+  <span class="attr">src</span>=<span class="val">"https://payitmonthly.github.io/pim_frontend_sdk/pim-widget.js"</span>
+  <span class="attr">data-pim-price</span>=<span class="val">"1200"</span>
+  <span class="attr">data-pim-max-instalments</span>=<span class="val">"12"</span>
+  <span class="attr">data-pim-color</span>=<span class="val">"#e05c2a"</span><span class="tag">&gt;
+&lt;/script&gt;</span>
+        </div>
+    </div>
+
+    <script async type="module"
+        src="https://payitmonthly.github.io/pim_frontend_sdk/pim-widget.js"
+        data-pim-price="1200"
+        data-pim-max-instalments="12"
+        data-pim-color="#e05c2a">
+    </script>
+
+</body>
+</html>
