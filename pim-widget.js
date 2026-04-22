@@ -446,7 +446,7 @@
     banner.innerHTML = `
       <div class="${uid}-banner-left-group">
         <div class="${uid}-banner-icon">
-          <img src="https://storage.googleapis.com/payitmonthly_public_assets/widget/generic/Group 2131328595.png" alt="" />
+          <img src="https://storage.googleapis.com/payitmonthly/Public/SDK-FE/General/V1/Group%202131328595.png" alt="" />
         </div>
         <div class="${uid}-banner-left">
           <div class="${uid}-banner-text-group">
@@ -457,7 +457,7 @@
         </div>
       </div>
       <div class="${uid}-logo-badge">
-        <img src="https://storage.googleapis.com/payitmonthly_public_assets/widget/generic/Logo (1).png" alt="payitmonthly" />
+        <img src="https://storage.googleapis.com/payitmonthly/Public/SDK-FE/General/V1/Logo (1).png" alt="payitmonthly" />
       </div>
     `;
 
@@ -481,27 +481,27 @@
         <div class="${uid}-modal-left">
           <div class="${uid}-left-body">
             <!-- Decorative background swirls -->
-            <div class="${uid}-left-swirl-1"><img src="https://storage.googleapis.com/payitmonthly_public_assets/widget/generic/swirl-1.svg" alt="" /></div>
-            <div class="${uid}-left-swirl-2"><img src="https://storage.googleapis.com/payitmonthly_public_assets/widget/generic/swirl-2.svg" alt="" /></div>
+            <div class="${uid}-left-swirl-1"><img src="https://storage.googleapis.com/payitmonthly/Public/SDK-FE/General/V1/swirl-1.svg" alt="" /></div>
+            <div class="${uid}-left-swirl-2"><img src="https://storage.googleapis.com/payitmonthly/Public/SDK-FE/General/V1/swirl-2.svg" alt="" /></div>
             <div class="${uid}-left-logo">
-              <img src="https://storage.googleapis.com/payitmonthly_public_assets/widget/generic/logo.svg" alt="payitmonthly" />
+              <img src="https://storage.googleapis.com/payitmonthly/Public/SDK-FE/General/V1/logo.svg" alt="payitmonthly" />
             </div>
             <div class="${uid}-left-badges">
               <div class="${uid}-left-badge">
-                <img class="${uid}-badge-icon" src="https://storage.googleapis.com/payitmonthly_public_assets/widget/generic/interest.png" alt="" />
+                <img class="${uid}-badge-icon" src="https://storage.googleapis.com/payitmonthly/Public/SDK-FE/General/V1/interest.png" alt="" />
                 Interest-free
               </div>
               <div class="${uid}-left-badge">
-                <img class="${uid}-badge-icon" src="https://storage.googleapis.com/payitmonthly_public_assets/widget/generic/rapid_decision_bolt.png" alt="" />
+                <img class="${uid}-badge-icon" src="https://storage.googleapis.com/payitmonthly/Public/SDK-FE/General/V1/rapid_decision_bolt.png" alt="" />
                 Rapid decision
               </div>
             </div>
-            <img class="${uid}-left-plant" src="https://storage.googleapis.com/payitmonthly_public_assets/widget/generic/plant.png" alt="" />
+            <img class="${uid}-left-plant" src="https://storage.googleapis.com/payitmonthly/Public/SDK-FE/General/V1/plant.png" alt="" />
             <!-- Character sits at bottom of purple panel, clipped by overflow:hidden -->
-            <img class="${uid}-left-character" src="https://storage.googleapis.com/payitmonthly_public_assets/widget/generic/character.png" alt="" />
+            <img class="${uid}-left-character" src="https://storage.googleapis.com/payitmonthly/Public/SDK-FE/General/V1/character.png" alt="" />
           </div>
           <div class="${uid}-trustpilot-bar">
-            <img src="https://storage.googleapis.com/payitmonthly_public_assets/widget/generic/trustpilot.png" alt="Trustpilot 5 stars" />
+            <img src="https://storage.googleapis.com/payitmonthly/Public/SDK-FE/General/V1/trustpilot.png" alt="Trustpilot 5 stars" />
           </div>
         </div>
 
