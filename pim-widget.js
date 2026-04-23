@@ -9,7 +9,7 @@
 
   const config = {
     price: parseFloat(script?.dataset?.pimPrice || 2985),
-    maxInstalments: parseInt(script?.dataset?.pimMaxInstalments || 24),
+    maxInstalments: Math.min(12, Math.max(2, parseInt(script?.dataset?.pimMaxInstalments || 12))),
     color: script?.dataset?.pimColor || "#875fc8",
   };
 
