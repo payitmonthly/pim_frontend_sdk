@@ -6,7 +6,7 @@ A lightweight, zero-dependency embed widget that lets you display a **PayItMonth
 
 ## Quick Start
 
-Add a placeholder `<div>` where you want the widget to appear, then load the script with your product price, in this case we have used £1499 for the product price and 12 for the max allowed number of installments:
+Add a placeholder `<div>` where you want the widget to appear, then load the script with your product price, in this case we have used £1499 for the product price and 12 for the max allowed number of installment. Please keep in mind the mininum number of allowed installments is 2 and the maximum amount is 12. 
 
 ```html
 <div data-acpim-widget></div>
@@ -57,7 +57,7 @@ Each script tag is independent, so you can embed the widget multiple times on th
 <script async type="module"
   src="https://payitmonthly.github.io/pim_frontend_sdk/pim-widget.js"
   data-pim-price="1200"
-  data-pim-max-instalments="12">
+  data-pim-max-instalments="4">
 </script>
 
 <!-- Product B -->
@@ -65,7 +65,7 @@ Each script tag is independent, so you can embed the widget multiple times on th
 <script async type="module"
   src="https://payitmonthly.github.io/pim_frontend_sdk/pim-widget.js"
   data-pim-price="3500"
-  data-pim-max-instalments="24">
+  data-pim-max-instalments="12">
 </script>
 ```
 
