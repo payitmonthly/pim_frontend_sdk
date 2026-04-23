@@ -1,12 +1,12 @@
 # PayItMonthly Widget — Frontend SDK
 
-A lightweight, zero-dependency embed widget that lets you display a **Buy Now, Pay Monthly** financing banner on any product page. When clicked, it opens a payment calculator modal so customers can explore instalment options before checkout.
+A lightweight, zero-dependency embed widget that lets you display a **PayItMonthly** financing banner on any product page. When clicked, it opens a payment calculator modal so customers can explore instalment options before checkout.
 
 ---
 
 ## Quick Start
 
-Add a placeholder `<div>` where you want the widget to appear, then load the script with your product price:
+Add a placeholder `<div>` where you want the widget to appear, then load the script with your product price, in this case we have used £1499 for the product price and 12 for the max allowed number of installments:
 
 ```html
 <div data-acpim-widget></div>
@@ -28,10 +28,10 @@ That's it. The widget mounts itself into the placeholder and is ready to use.
 
 All options are set as `data-*` attributes on the `<script>` tag.
 
-| Attribute | Type | Default | Description |
+| Attribute | Type | Sample Value | Description |
 |---|---|---|---|
 | `data-pim-price` | number | `2985` | The product price in £. Drives the payment calculator. |
-| `data-pim-max-instalments` | number | `24` | Maximum number of monthly instalments offered. |
+| `data-pim-max-instalments` | number | `12` | Maximum number of monthly instalments offered. |
 
 ### Example — custom instalment cap
 
