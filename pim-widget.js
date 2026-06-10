@@ -177,6 +177,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        color: #617481; /* grey over the white panel; switched to white on mobile */
       }
       .${uid}-close:hover { opacity: 0.7; }
       .${uid}-close svg { display: block; }
@@ -415,6 +416,40 @@
         .${uid}-left-character { display: none; }
         .${uid}-left-plant { display: none; }
         .${uid}-logo-badge { display: none; }
+
+        /* Close button sits over the purple panel when stacked */
+        .${uid}-close {
+          color: #fff;
+          width: 40px;
+          height: 40px;
+          top: 4px;
+          right: 4px;
+        }
+
+        /* Tighter banner so it fits narrow viewports */
+        .${uid}-banner { padding: 10px 12px 10px 14px; }
+        .${uid}-banner-left-group { flex-shrink: 1; min-width: 0; }
+        .${uid}-banner-icon { width: 44px; height: 44px; }
+
+        /* Smaller side padding inside the modal */
+        .${uid}-right-sliders { padding: 18px 16px 0; }
+        .${uid}-right-stats { padding: 8px 16px 18px; }
+
+        /* Easier slider interaction: taller invisible hit area + bigger thumb.
+           The track stays 6px — padding expands the touch zone and
+           background-clip keeps the gradient inside the content box. */
+        .${uid}-slider-block input[type=range] {
+          height: 34px;
+          padding: 14px 0;
+          background-clip: content-box;
+          box-shadow: none;
+        }
+        .${uid}-slider-block input[type=range]::-webkit-slider-thumb {
+          width: 28px; height: 28px;
+        }
+        .${uid}-slider-block input[type=range]::-moz-range-thumb {
+          width: 28px; height: 28px;
+        }
       }
     `;
 
@@ -441,7 +476,7 @@
     banner.setAttribute("tabindex", "0");
     banner.setAttribute("aria-haspopup", "dialog");
     banner.setAttribute("aria-label", "View interest free finance options");
-    const _initInst = Math.min(12, config.maxInstalments);
+    const _initInst = config.maxInstalments;
     const _initMonthly = compute(config.price, _initInst).monthly;
     banner.innerHTML = `
       <div class="${uid}-banner-left-group">
@@ -473,7 +508,7 @@
         <!-- Close button: top-right of whole modal -->
         <button class="${uid}-close" aria-label="Close">
           <svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 4L4 12M4 4l8 8" stroke="#617481" stroke-width="2" stroke-linecap="round"/>
+            <path d="M12 4L4 12M4 4l8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           </svg>
         </button>
 
@@ -548,9 +583,13 @@
     /* ─ Wire up events ─ */
     const open = () => {
       overlay.classList.add("open");
+      document.body.style.overflow = "hidden"; // lock background scroll
       updateModal();
     };
-    const close = () => overlay.classList.remove("open");
+    const close = () => {
+      overlay.classList.remove("open");
+      document.body.style.overflow = "";
+    };
 
     banner.addEventListener("click", open);
     banner.addEventListener("keydown", (e) => {
@@ -575,13 +614,11 @@
     return banner;
   }
 
-  /* ── Update banner text ── */
+  /* ── Update banner text (fixed to highest instalments / lowest monthly) ── */
   function updateBanner() {
     const el = document.getElementById(`${uid}-b-amt`);
     if (!el) return;
-    const instSlider = document.getElementById(`${uid}-inst-slider`);
-    if (!instSlider) return;
-    const inst = parseInt(instSlider.value);
+    const inst = config.maxInstalments;
     const { monthly } = compute(config.price, inst);
     el.textContent = inst + " x " + fmt(monthly);
   }
@@ -592,7 +629,9 @@
     const max = parseFloat(slider.max);
     const val = parseFloat(slider.value);
     const pct = ((val - min) / (max - min)) * 100;
-    slider.style.background = `linear-gradient(to right, ${config.color} ${pct}%, #f0f3fc ${pct}%)`;
+    /* backgroundImage (not the background shorthand) so the mobile
+       background-clip: content-box hit-area trick isn't reset */
+    slider.style.backgroundImage = `linear-gradient(to right, ${config.color} ${pct}%, #f0f3fc ${pct}%)`;
   }
 
   /* ── Update modal stats ── */
@@ -609,7 +648,6 @@
       instalments + " × " + fmt(monthly);
 
     updateSliderFill(instSlider);
-    updateBanner();
   }
 
   /* ── Find placeholder(s) or auto-append ── */
