@@ -353,6 +353,8 @@
         margin: 0;
         opacity: 0.9;
       }
+      .${uid}-legal p { margin: 0 0 8px; }
+      .${uid}-legal p:last-child { margin-bottom: 0; }
       .${uid}-trustpilot-bar {
         background: #604291;
         padding: 12px 20px;
@@ -571,7 +573,9 @@
               <svg width="16" height="16" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="9" r="7.5" stroke="#875fc8" stroke-width="1.5"/><path d="M9 8.25V12.75M9 5.25V6.25" stroke="#875fc8" stroke-width="1.5" stroke-linecap="round"/></svg>
               <span>To select this plan go to Checkout, and select PayItMonthly in the Payment section.</span>
             </div>
-            <p class="${uid}-legal">PayItMonthly is unregulated credit. 18+, UK only. Credit subject to status. Late or missed payments may impact your ability to get credit in future. T&amp;Cs apply see payitmonthly.uk/terms</p>
+            <div class="${uid}-legal">
+              <p>PayItMonthly is deemed authorised and regulated by the FCA under the Temporary Permissions Regime for Regulated Deferred Payment Credit. 18+, UK only. Credit is subject to status. Late or missed payments may impact your ability to get credit in future. T&amp;Cs apply see payitmonthly.uk/terms</p>
+            </div>
             </div>
         </div>
 

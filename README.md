@@ -89,4 +89,4 @@ Works in all modern browsers (Chrome, Firefox, Safari, Edge). Uses ES modules (`
 
 ## Legal
 
-PayItMonthly is unregulated credit. 18+, UK only. Credit subject to status. Late or missed payments may impact your ability to get credit in future. T&Cs apply — see [payitmonthly.uk/terms](https://payitmonthly.uk/terms).
+PayItMonthly is deemed authorised and regulated by the FCA under the Temporary Permissions Regime for Regulated Deferred Payment Credit. 18+, UK only. Credit is subject to status. Late or missed payments may impact your ability to get credit in future. T&Cs apply see [payitmonthly.uk/terms](https://payitmonthly.uk/terms).
